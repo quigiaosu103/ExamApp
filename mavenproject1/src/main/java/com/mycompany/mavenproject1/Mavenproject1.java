@@ -31,8 +31,9 @@ public class Mavenproject1 extends javax.swing.JFrame {
 
         kButton1 = new com.k33ptoo.components.KButton();
         jPanel1 = new javax.swing.JPanel();
-        jLayeredPane2 = new javax.swing.JLayeredPane();
+        layerForms = new javax.swing.JLayeredPane();
         loginForm = new com.k33ptoo.components.KGradientPanel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel4 = new com.k33ptoo.components.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -41,11 +42,9 @@ public class Mavenproject1 extends javax.swing.JFrame {
         kButton2 = new com.k33ptoo.components.KButton();
         jLabel2 = new javax.swing.JLabel();
         kButton3 = new com.k33ptoo.components.KButton();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel3 = new javax.swing.JLabel();
         signupForm = new com.k33ptoo.components.KGradientPanel();
         jLayeredPane3 = new javax.swing.JLayeredPane();
-        jLabel6 = new javax.swing.JLabel();
         kGradientPanel5 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel6 = new com.k33ptoo.components.KGradientPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -53,6 +52,15 @@ public class Mavenproject1 extends javax.swing.JFrame {
         userPasswordInput1 = new javax.swing.JPasswordField();
         kButton4 = new com.k33ptoo.components.KButton();
         confirmPasswordInput = new javax.swing.JPasswordField();
+        jLabel6 = new javax.swing.JLabel();
+        backToLogin = new com.k33ptoo.components.KButton();
+        userInfo = new com.k33ptoo.components.KGradientPanel();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        jLabel5 = new javax.swing.JLabel();
+        kButton5 = new com.k33ptoo.components.KButton();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
 
         kButton1.setText("kButton1");
 
@@ -70,12 +78,26 @@ public class Mavenproject1 extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 520));
+
+        layerForms.setPreferredSize(new java.awt.Dimension(800, 519));
 
         loginForm.setkBorderRadius(0);
         loginForm.setkEndColor(new java.awt.Color(87, 163, 253));
         loginForm.setkGradientFocus(270);
         loginForm.setkStartColor(new java.awt.Color(255, 255, 255));
-        loginForm.setPreferredSize(new java.awt.Dimension(803, 546));
+        loginForm.setPreferredSize(new java.awt.Dimension(802, 520));
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 235, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 121, Short.MAX_VALUE)
+        );
 
         kGradientPanel2.setBackground(new java.awt.Color(255, 255, 255));
         kGradientPanel2.setkBorderRadius(30);
@@ -146,6 +168,11 @@ public class Mavenproject1 extends javax.swing.JFrame {
         kButton2.setkHoverStartColor(new java.awt.Color(98, 170, 255));
         kButton2.setkSelectedColor(new java.awt.Color(86, 153, 255));
         kButton2.setkStartColor(new java.awt.Color(86, 153, 255));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
@@ -164,15 +191,23 @@ public class Mavenproject1 extends javax.swing.JFrame {
         kButton3.setkPressedColor(new java.awt.Color(255, 255, 255));
         kButton3.setkSelectedColor(new java.awt.Color(255, 255, 255));
         kButton3.setkStartColor(new java.awt.Color(255, 255, 255));
+        kButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\code\\code_Java\\NetWork\\ExamApp\\mavenproject1\\src\\main\\java\\com\\mycompany\\mavenproject1\\userIconn.png")); // NOI18N
+        jLabel3.setPreferredSize(new java.awt.Dimension(80, 80));
 
         javax.swing.GroupLayout kGradientPanel4Layout = new javax.swing.GroupLayout(kGradientPanel4);
         kGradientPanel4.setLayout(kGradientPanel4Layout);
         kGradientPanel4Layout.setHorizontalGroup(
             kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(98, 98, 98))
+                .addGap(102, 102, 102))
             .addGroup(kGradientPanel4Layout.createSequentialGroup()
                 .addGroup(kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel4Layout.createSequentialGroup()
@@ -187,15 +222,20 @@ public class Mavenproject1 extends javax.swing.JFrame {
                             .addComponent(userPasswordInput, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)))
                     .addGroup(kGradientPanel4Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(kGradientPanel4Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         kGradientPanel4Layout.setVerticalGroup(
             kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel4Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(67, 67, 67)
+                .addGap(37, 37, 37)
                 .addComponent(userNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(userPasswordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,66 +265,46 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\code\\code_Java\\NetWork\\ExamApp\\mavenproject1\\src\\main\\java\\com\\mycompany\\mavenproject1\\userIconn.png")); // NOI18N
-        jLabel3.setPreferredSize(new java.awt.Dimension(80, 80));
-
-        jLayeredPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout loginFormLayout = new javax.swing.GroupLayout(loginForm);
         loginForm.setLayout(loginFormLayout);
         loginFormLayout.setHorizontalGroup(
             loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginFormLayout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(297, 297, 297))
-            .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(loginFormLayout.createSequentialGroup()
-                    .addGap(248, 248, 248)
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(260, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(253, 253, 253))
         );
         loginFormLayout.setVerticalGroup(
             loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginFormLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 413, Short.MAX_VALUE))
-            .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(loginFormLayout.createSequentialGroup()
-                    .addGap(68, 68, 68)
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(68, Short.MAX_VALUE)))
+                .addGroup(loginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginFormLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(loginFormLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         signupForm.setkBorderRadius(0);
         signupForm.setkEndColor(new java.awt.Color(87, 163, 253));
         signupForm.setkGradientFocus(270);
         signupForm.setkStartColor(new java.awt.Color(255, 255, 255));
-        signupForm.setPreferredSize(new java.awt.Dimension(803, 546));
+        signupForm.setPreferredSize(new java.awt.Dimension(800, 520));
 
-        jLayeredPane3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\code\\code_Java\\NetWork\\ExamApp\\mavenproject1\\src\\main\\java\\com\\mycompany\\mavenproject1\\userIconn.png")); // NOI18N
-        jLabel6.setPreferredSize(new java.awt.Dimension(80, 80));
-        jLayeredPane3.setLayer(jLabel6, 99999);
-        jLayeredPane3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 100, 160));
+        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
+        jLayeredPane3.setLayout(jLayeredPane3Layout);
+        jLayeredPane3Layout.setHorizontalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jLayeredPane3Layout.setVerticalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+        );
 
         kGradientPanel5.setBackground(new java.awt.Color(255, 255, 255));
         kGradientPanel5.setkBorderRadius(30);
@@ -381,14 +401,13 @@ public class Mavenproject1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\code\\code_Java\\NetWork\\ExamApp\\mavenproject1\\src\\main\\java\\com\\mycompany\\mavenproject1\\userIconn.png")); // NOI18N
+        jLabel6.setPreferredSize(new java.awt.Dimension(80, 80));
+
         javax.swing.GroupLayout kGradientPanel6Layout = new javax.swing.GroupLayout(kGradientPanel6);
         kGradientPanel6.setLayout(kGradientPanel6Layout);
         kGradientPanel6Layout.setHorizontalGroup(
             kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(98, 98, 98))
             .addGroup(kGradientPanel6Layout.createSequentialGroup()
                 .addGroup(kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
@@ -399,85 +418,229 @@ public class Mavenproject1 extends javax.swing.JFrame {
                             .addComponent(confirmPasswordInput)))
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(kGradientPanel6Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(jLabel4))
+                    .addGroup(kGradientPanel6Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         kGradientPanel6Layout.setVerticalGroup(
             kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel6Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
-                .addGap(67, 67, 67)
+                .addGap(32, 32, 32)
                 .addComponent(userNameInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(userPasswordInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(28, 28, 28)
                 .addComponent(confirmPasswordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(37, 37, 37)
                 .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         kGradientPanel5.add(kGradientPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 400));
+
+        backToLogin.setBorder(null);
+        backToLogin.setText("back to login");
+        backToLogin.setkEndColor(new java.awt.Color(87, 164, 254));
+        backToLogin.setkHoverEndColor(new java.awt.Color(87, 164, 254));
+        backToLogin.setkHoverForeGround(new java.awt.Color(87, 164, 254));
+        backToLogin.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        backToLogin.setkPressedColor(new java.awt.Color(255, 255, 255));
+        backToLogin.setkSelectedColor(new java.awt.Color(87, 164, 254));
+        backToLogin.setkStartColor(new java.awt.Color(255, 255, 255));
+        backToLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backToLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout signupFormLayout = new javax.swing.GroupLayout(signupForm);
         signupForm.setLayout(signupFormLayout);
         signupFormLayout.setHorizontalGroup(
             signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signupFormLayout.createSequentialGroup()
-                .addContainerGap(255, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
+                .addComponent(backToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(258, 258, 258))
+                .addContainerGap(256, Short.MAX_VALUE))
             .addGroup(signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signupFormLayout.createSequentialGroup()
-                    .addContainerGap(341, Short.MAX_VALUE)
-                    .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(342, Short.MAX_VALUE)))
+                    .addContainerGap(346, Short.MAX_VALUE)
+                    .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(357, Short.MAX_VALUE)))
         );
         signupFormLayout.setVerticalGroup(
             signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signupFormLayout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
-                .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+            .addGroup(signupFormLayout.createSequentialGroup()
+                .addGroup(signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(signupFormLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(signupFormLayout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(backToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
             .addGroup(signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(signupFormLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(384, Short.MAX_VALUE)))
+                    .addContainerGap(414, Short.MAX_VALUE)))
         );
 
-        jLayeredPane2.setLayer(loginForm, javax.swing.JLayeredPane.MODAL_LAYER);
-        jLayeredPane2.setLayer(signupForm, javax.swing.JLayeredPane.MODAL_LAYER);
+        userInfo.setkBorderRadius(0);
+        userInfo.setkEndColor(new java.awt.Color(87, 154, 254));
+        userInfo.setkStartColor(new java.awt.Color(255, 255, 255));
+        userInfo.setOpaque(false);
+        userInfo.setPreferredSize(new java.awt.Dimension(800, 520));
+
+        jLayeredPane2.setPreferredSize(new java.awt.Dimension(800, 520));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bkUsInfo.png"))); // NOI18N
+
+        kButton5.setBorder(null);
+        kButton5.setText("START");
+        kButton5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        kButton5.setkEndColor(new java.awt.Color(86, 153, 255));
+        kButton5.setkHoverEndColor(new java.awt.Color(98, 170, 255));
+        kButton5.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton5.setkHoverStartColor(new java.awt.Color(98, 170, 255));
+        kButton5.setkSelectedColor(new java.awt.Color(86, 153, 255));
+        kButton5.setkStartColor(new java.awt.Color(86, 153, 255));
+        kButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton5ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.setBackground(new java.awt.Color(238, 232, 232));
+        jTextField2.setBorder(null);
+
+        jTextField3.setBackground(new java.awt.Color(238, 232, 232));
+        jTextField3.setBorder(null);
+
+        jTextField1.setBackground(new java.awt.Color(238, 232, 232));
+        jTextField1.setBorder(null);
+
+        jLayeredPane2.setLayer(jLabel5, 1);
+        jLayeredPane2.setLayer(kButton5, 9999);
+        jLayeredPane2.setLayer(jTextField2, 99);
+        jLayeredPane2.setLayer(jTextField3, 99);
+        jLayeredPane2.setLayer(jTextField1, 99);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
         jLayeredPane2Layout.setHorizontalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(signupForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addComponent(jLabel5)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(loginForm, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE))
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(540, 540, 540)
+                    .addComponent(kButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(458, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(447, 447, 447)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(72, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(448, 448, 448)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(78, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(445, 445, 445)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(71, Short.MAX_VALUE)))
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(signupForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
+                .addComponent(jLabel5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGap(340, 340, 340)
+                    .addComponent(kButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(289, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(272, 272, 272)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(241, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(214, 214, 214)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(299, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(148, 148, 148)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(365, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout userInfoLayout = new javax.swing.GroupLayout(userInfo);
+        userInfo.setLayout(userInfoLayout);
+        userInfoLayout.setHorizontalGroup(
+            userInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userInfoLayout.createSequentialGroup()
+                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        userInfoLayout.setVerticalGroup(
+            userInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userInfoLayout.createSequentialGroup()
+                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        layerForms.setLayer(loginForm, javax.swing.JLayeredPane.MODAL_LAYER);
+        layerForms.setLayer(signupForm, javax.swing.JLayeredPane.MODAL_LAYER);
+        layerForms.setLayer(userInfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout layerFormsLayout = new javax.swing.GroupLayout(layerForms);
+        layerForms.setLayout(layerFormsLayout);
+        layerFormsLayout.setHorizontalGroup(
+            layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(signupForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE))
+            .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(userInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE))
+        );
+        layerFormsLayout.setVerticalGroup(
+            layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(loginForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(signupForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layerFormsLayout.createSequentialGroup()
+                    .addComponent(userInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane2)
+            .addComponent(layerForms, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(layerForms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -570,6 +733,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
 
     private void userPasswordInput1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userPasswordInput1FocusGained
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_userPasswordInput1FocusGained
 
     private void userNameInput1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameInput1FocusLost
@@ -579,6 +743,34 @@ public class Mavenproject1 extends javax.swing.JFrame {
     private void userNameInput1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameInput1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameInput1FocusGained
+
+    private void backToLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToLoginActionPerformed
+        // TODO add your handling code here:
+        layerForms.removeAll();
+        layerForms.add(loginForm);
+        layerForms.repaint();
+        layerForms.revalidate();
+    }//GEN-LAST:event_backToLoginActionPerformed
+
+    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+        // TODO add your handling code here:
+        layerForms.removeAll();
+        layerForms.add(signupForm);
+        layerForms.repaint();
+        layerForms.revalidate();
+    }//GEN-LAST:event_kButton3ActionPerformed
+
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+        // TODO add your handling code here:
+        layerForms.removeAll();
+        layerForms.add(userInfo);
+        layerForms.repaint();
+        layerForms.revalidate();
+    }//GEN-LAST:event_kButton2ActionPerformed
+
+    private void kButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -621,26 +813,34 @@ public class Mavenproject1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.k33ptoo.components.KButton backToLogin;
     private javax.swing.JPasswordField confirmPasswordInput;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private com.k33ptoo.components.KButton kButton1;
     private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KButton kButton3;
     private com.k33ptoo.components.KButton kButton4;
+    private com.k33ptoo.components.KButton kButton5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
     private com.k33ptoo.components.KGradientPanel kGradientPanel5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel6;
+    private javax.swing.JLayeredPane layerForms;
     private com.k33ptoo.components.KGradientPanel loginForm;
     private com.k33ptoo.components.KGradientPanel signupForm;
+    private com.k33ptoo.components.KGradientPanel userInfo;
     private javax.swing.JTextField userNameInput;
     private javax.swing.JTextField userNameInput1;
     private javax.swing.JPasswordField userPasswordInput;
