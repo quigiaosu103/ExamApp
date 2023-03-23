@@ -5,6 +5,7 @@
 package com.mycompany.mavenproject1;
 
 import java.awt.Color;
+import java.awt.*;
 
 /**
  *
@@ -39,28 +40,28 @@ public class Mavenproject1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         userNameInput = new javax.swing.JTextField();
         userPasswordInput = new javax.swing.JPasswordField();
-        kButton2 = new com.k33ptoo.components.KButton();
+        signBtn = new com.k33ptoo.components.KButton();
         jLabel2 = new javax.swing.JLabel();
-        kButton3 = new com.k33ptoo.components.KButton();
+        signupBtn = new com.k33ptoo.components.KButton();
         jLabel3 = new javax.swing.JLabel();
         signupForm = new com.k33ptoo.components.KGradientPanel();
-        jLayeredPane3 = new javax.swing.JLayeredPane();
         kGradientPanel5 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel6 = new com.k33ptoo.components.KGradientPanel();
         jLabel4 = new javax.swing.JLabel();
-        userNameInput1 = new javax.swing.JTextField();
-        userPasswordInput1 = new javax.swing.JPasswordField();
-        kButton4 = new com.k33ptoo.components.KButton();
-        confirmPasswordInput = new javax.swing.JPasswordField();
+        userNameSignUp = new javax.swing.JTextField();
+        userPasswordSignUp = new javax.swing.JPasswordField();
+        signInSubmitBtn = new com.k33ptoo.components.KButton();
+        confirmPasswordSignup = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
-        backToLogin = new com.k33ptoo.components.KButton();
+        backToLog = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         userInfo = new com.k33ptoo.components.KGradientPanel();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel5 = new javax.swing.JLabel();
         kButton5 = new com.k33ptoo.components.KButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        phoneNumber = new javax.swing.JTextField();
+        studentID = new javax.swing.JTextField();
+        fullname = new javax.swing.JTextField();
 
         kButton1.setText("kButton1");
 
@@ -78,7 +79,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 520));
+        setPreferredSize(new java.awt.Dimension(799, 544));
 
         layerForms.setPreferredSize(new java.awt.Dimension(800, 519));
 
@@ -87,6 +88,11 @@ public class Mavenproject1 extends javax.swing.JFrame {
         loginForm.setkGradientFocus(270);
         loginForm.setkStartColor(new java.awt.Color(255, 255, 255));
         loginForm.setPreferredSize(new java.awt.Dimension(802, 520));
+        loginForm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginFormMouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -159,18 +165,18 @@ public class Mavenproject1 extends javax.swing.JFrame {
             }
         });
 
-        kButton2.setBorder(null);
-        kButton2.setText("Sign in");
-        kButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        kButton2.setkEndColor(new java.awt.Color(86, 153, 255));
-        kButton2.setkHoverEndColor(new java.awt.Color(98, 170, 255));
-        kButton2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        kButton2.setkHoverStartColor(new java.awt.Color(98, 170, 255));
-        kButton2.setkSelectedColor(new java.awt.Color(86, 153, 255));
-        kButton2.setkStartColor(new java.awt.Color(86, 153, 255));
-        kButton2.addActionListener(new java.awt.event.ActionListener() {
+        signBtn.setBorder(null);
+        signBtn.setText("Sign in");
+        signBtn.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        signBtn.setkEndColor(new java.awt.Color(86, 153, 255));
+        signBtn.setkHoverEndColor(new java.awt.Color(98, 170, 255));
+        signBtn.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        signBtn.setkHoverStartColor(new java.awt.Color(98, 170, 255));
+        signBtn.setkSelectedColor(new java.awt.Color(86, 153, 255));
+        signBtn.setkStartColor(new java.awt.Color(86, 153, 255));
+        signBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton2ActionPerformed(evt);
+                signBtnActionPerformed(evt);
             }
         });
 
@@ -178,22 +184,22 @@ public class Mavenproject1 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Don't have an account?");
 
-        kButton3.setBorder(null);
-        kButton3.setForeground(new java.awt.Color(221, 178, 25));
-        kButton3.setText("Sign up");
-        kButton3.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        kButton3.setkBackGroundColor(new java.awt.Color(255, 255, 255));
-        kButton3.setkEndColor(new java.awt.Color(255, 255, 255));
-        kButton3.setkForeGround(new java.awt.Color(221, 178, 25));
-        kButton3.setkHoverEndColor(new java.awt.Color(255, 255, 255));
-        kButton3.setkHoverForeGround(new java.awt.Color(220, 176, 17));
-        kButton3.setkHoverStartColor(new java.awt.Color(255, 255, 255));
-        kButton3.setkPressedColor(new java.awt.Color(255, 255, 255));
-        kButton3.setkSelectedColor(new java.awt.Color(255, 255, 255));
-        kButton3.setkStartColor(new java.awt.Color(255, 255, 255));
-        kButton3.addActionListener(new java.awt.event.ActionListener() {
+        signupBtn.setBorder(null);
+        signupBtn.setForeground(new java.awt.Color(221, 178, 25));
+        signupBtn.setText("Sign up");
+        signupBtn.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        signupBtn.setkBackGroundColor(new java.awt.Color(255, 255, 255));
+        signupBtn.setkEndColor(new java.awt.Color(255, 255, 255));
+        signupBtn.setkForeGround(new java.awt.Color(221, 178, 25));
+        signupBtn.setkHoverEndColor(new java.awt.Color(255, 255, 255));
+        signupBtn.setkHoverForeGround(new java.awt.Color(220, 176, 17));
+        signupBtn.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        signupBtn.setkPressedColor(new java.awt.Color(255, 255, 255));
+        signupBtn.setkSelectedColor(new java.awt.Color(255, 255, 255));
+        signupBtn.setkStartColor(new java.awt.Color(255, 255, 255));
+        signupBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton3ActionPerformed(evt);
+                signupBtnActionPerformed(evt);
             }
         });
 
@@ -214,7 +220,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel2)
                         .addGap(4, 4, 4)
-                        .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(signupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(kGradientPanel4Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -222,7 +228,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
                             .addComponent(userPasswordInput, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)))
                     .addGroup(kGradientPanel4Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(signBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(kGradientPanel4Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -240,11 +246,11 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(userPasswordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(signBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(signupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -295,17 +301,6 @@ public class Mavenproject1 extends javax.swing.JFrame {
         signupForm.setkStartColor(new java.awt.Color(255, 255, 255));
         signupForm.setPreferredSize(new java.awt.Dimension(800, 520));
 
-        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
-        jLayeredPane3.setLayout(jLayeredPane3Layout);
-        jLayeredPane3Layout.setHorizontalGroup(
-            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jLayeredPane3Layout.setVerticalGroup(
-            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-
         kGradientPanel5.setBackground(new java.awt.Color(255, 255, 255));
         kGradientPanel5.setkBorderRadius(30);
         kGradientPanel5.setkEndColor(new java.awt.Color(255, 255, 255));
@@ -325,79 +320,79 @@ public class Mavenproject1 extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("SIGN UP");
 
-        userNameInput1.setBackground(new java.awt.Color(255, 255, 255));
-        userNameInput1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        userNameInput1.setForeground(new java.awt.Color(204, 204, 204));
-        userNameInput1.setText("username");
-        userNameInput1.setToolTipText("");
-        userNameInput1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(86, 152, 254)));
-        userNameInput1.setCaretColor(new java.awt.Color(102, 255, 0));
-        userNameInput1.setDisabledTextColor(new java.awt.Color(80, 80, 80));
-        userNameInput1.setOpaque(false);
-        userNameInput1.addFocusListener(new java.awt.event.FocusAdapter() {
+        userNameSignUp.setBackground(new java.awt.Color(255, 255, 255));
+        userNameSignUp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        userNameSignUp.setForeground(new java.awt.Color(204, 204, 204));
+        userNameSignUp.setText("username");
+        userNameSignUp.setToolTipText("");
+        userNameSignUp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(86, 152, 254)));
+        userNameSignUp.setCaretColor(new java.awt.Color(102, 255, 0));
+        userNameSignUp.setDisabledTextColor(new java.awt.Color(80, 80, 80));
+        userNameSignUp.setOpaque(false);
+        userNameSignUp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                userNameInput1FocusGained(evt);
+                userNameSignUpFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                userNameInput1FocusLost(evt);
+                userNameSignUpFocusLost(evt);
             }
         });
 
-        userPasswordInput1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        userPasswordInput1.setForeground(new java.awt.Color(86, 153, 255));
-        userPasswordInput1.setText("password    ");
-        userPasswordInput1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(86, 152, 254)));
-        userPasswordInput1.setOpaque(false);
-        userPasswordInput1.addFocusListener(new java.awt.event.FocusAdapter() {
+        userPasswordSignUp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        userPasswordSignUp.setForeground(new java.awt.Color(86, 153, 255));
+        userPasswordSignUp.setText("password    ");
+        userPasswordSignUp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(86, 152, 254)));
+        userPasswordSignUp.setOpaque(false);
+        userPasswordSignUp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                userPasswordInput1FocusGained(evt);
+                userPasswordSignUpFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                userPasswordInput1FocusLost(evt);
+                userPasswordSignUpFocusLost(evt);
             }
         });
-        userPasswordInput1.addComponentListener(new java.awt.event.ComponentAdapter() {
+        userPasswordSignUp.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
-                userPasswordInput1ComponentShown(evt);
+                userPasswordSignUpComponentShown(evt);
             }
         });
-        userPasswordInput1.addActionListener(new java.awt.event.ActionListener() {
+        userPasswordSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userPasswordInput1ActionPerformed(evt);
+                userPasswordSignUpActionPerformed(evt);
             }
         });
 
-        kButton4.setBorder(null);
-        kButton4.setText("Sign in");
-        kButton4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        kButton4.setkEndColor(new java.awt.Color(86, 153, 255));
-        kButton4.setkHoverEndColor(new java.awt.Color(98, 170, 255));
-        kButton4.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        kButton4.setkHoverStartColor(new java.awt.Color(98, 170, 255));
-        kButton4.setkSelectedColor(new java.awt.Color(86, 153, 255));
-        kButton4.setkStartColor(new java.awt.Color(86, 153, 255));
+        signInSubmitBtn.setBorder(null);
+        signInSubmitBtn.setText("Sign in");
+        signInSubmitBtn.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        signInSubmitBtn.setkEndColor(new java.awt.Color(86, 153, 255));
+        signInSubmitBtn.setkHoverEndColor(new java.awt.Color(98, 170, 255));
+        signInSubmitBtn.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        signInSubmitBtn.setkHoverStartColor(new java.awt.Color(98, 170, 255));
+        signInSubmitBtn.setkSelectedColor(new java.awt.Color(86, 153, 255));
+        signInSubmitBtn.setkStartColor(new java.awt.Color(86, 153, 255));
 
-        confirmPasswordInput.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        confirmPasswordInput.setForeground(new java.awt.Color(86, 153, 255));
-        confirmPasswordInput.setText("password    ");
-        confirmPasswordInput.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(86, 152, 254)));
-        confirmPasswordInput.setOpaque(false);
-        confirmPasswordInput.addFocusListener(new java.awt.event.FocusAdapter() {
+        confirmPasswordSignup.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        confirmPasswordSignup.setForeground(new java.awt.Color(86, 153, 255));
+        confirmPasswordSignup.setText("confirm password");
+        confirmPasswordSignup.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(86, 152, 254)));
+        confirmPasswordSignup.setOpaque(false);
+        confirmPasswordSignup.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                confirmPasswordInputFocusGained(evt);
+                confirmPasswordSignupFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                confirmPasswordInputFocusLost(evt);
+                confirmPasswordSignupFocusLost(evt);
             }
         });
-        confirmPasswordInput.addComponentListener(new java.awt.event.ComponentAdapter() {
+        confirmPasswordSignup.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
-                confirmPasswordInputComponentShown(evt);
+                confirmPasswordSignupComponentShown(evt);
             }
         });
-        confirmPasswordInput.addActionListener(new java.awt.event.ActionListener() {
+        confirmPasswordSignup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmPasswordInputActionPerformed(evt);
+                confirmPasswordSignupActionPerformed(evt);
             }
         });
 
@@ -413,12 +408,12 @@ public class Mavenproject1 extends javax.swing.JFrame {
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userNameInput1)
-                            .addComponent(userPasswordInput1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                            .addComponent(confirmPasswordInput)))
+                            .addComponent(userNameSignUp)
+                            .addComponent(userPasswordSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                            .addComponent(confirmPasswordSignup)))
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(signInSubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(jLabel4))
@@ -435,48 +430,41 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addGap(32, 32, 32)
-                .addComponent(userNameInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userNameSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(userPasswordInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userPasswordSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(confirmPasswordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(confirmPasswordSignup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(signInSubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
         kGradientPanel5.add(kGradientPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 400));
 
-        backToLogin.setBorder(null);
-        backToLogin.setText("back to login");
-        backToLogin.setkEndColor(new java.awt.Color(87, 164, 254));
-        backToLogin.setkHoverEndColor(new java.awt.Color(87, 164, 254));
-        backToLogin.setkHoverForeGround(new java.awt.Color(87, 164, 254));
-        backToLogin.setkHoverStartColor(new java.awt.Color(255, 255, 255));
-        backToLogin.setkPressedColor(new java.awt.Color(255, 255, 255));
-        backToLogin.setkSelectedColor(new java.awt.Color(87, 164, 254));
-        backToLogin.setkStartColor(new java.awt.Color(255, 255, 255));
-        backToLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backToLoginActionPerformed(evt);
+        backToLog.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\OneDrive\\Pictures\\backIcon.png")); // NOI18N
+        backToLog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backToLogMouseClicked(evt);
             }
         });
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Back to sign in");
 
         javax.swing.GroupLayout signupFormLayout = new javax.swing.GroupLayout(signupForm);
         signupForm.setLayout(signupFormLayout);
         signupFormLayout.setHorizontalGroup(
             signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signupFormLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(backToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(165, 165, 165)
+                .addGroup(signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(backToLog)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(256, Short.MAX_VALUE))
-            .addGroup(signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signupFormLayout.createSequentialGroup()
-                    .addContainerGap(346, Short.MAX_VALUE)
-                    .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(357, Short.MAX_VALUE)))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         signupFormLayout.setVerticalGroup(
             signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,14 +474,11 @@ public class Mavenproject1 extends javax.swing.JFrame {
                         .addGap(55, 55, 55)
                         .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(signupFormLayout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(backToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(226, 226, 226)
+                        .addComponent(backToLog)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)))
                 .addContainerGap(41, Short.MAX_VALUE))
-            .addGroup(signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(signupFormLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(414, Short.MAX_VALUE)))
         );
 
         userInfo.setkBorderRadius(0);
@@ -521,20 +506,53 @@ public class Mavenproject1 extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setBackground(new java.awt.Color(238, 232, 232));
-        jTextField2.setBorder(null);
+        phoneNumber.setBackground(new java.awt.Color(238, 232, 232));
+        phoneNumber.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        phoneNumber.setForeground(new java.awt.Color(153, 153, 153));
+        phoneNumber.setText("Phone number:");
+        phoneNumber.setBorder(null);
+        phoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phoneNumberFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phoneNumberFocusLost(evt);
+            }
+        });
 
-        jTextField3.setBackground(new java.awt.Color(238, 232, 232));
-        jTextField3.setBorder(null);
+        studentID.setBackground(new java.awt.Color(238, 232, 232));
+        studentID.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        studentID.setForeground(new java.awt.Color(153, 153, 153));
+        studentID.setText("Student ID:");
+        studentID.setBorder(null);
+        studentID.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                studentIDFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                studentIDFocusLost(evt);
+            }
+        });
 
-        jTextField1.setBackground(new java.awt.Color(238, 232, 232));
-        jTextField1.setBorder(null);
+        fullname.setBackground(new java.awt.Color(238, 232, 232));
+        fullname.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        fullname.setForeground(new java.awt.Color(153, 153, 153));
+        fullname.setText("Full name:");
+        fullname.setBorder(null);
+        fullname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fullnameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                fullnameFocusLost(evt);
+            }
+        });
 
         jLayeredPane2.setLayer(jLabel5, 1);
         jLayeredPane2.setLayer(kButton5, 9999);
-        jLayeredPane2.setLayer(jTextField2, 99);
-        jLayeredPane2.setLayer(jTextField3, 99);
-        jLayeredPane2.setLayer(jTextField1, 99);
+        jLayeredPane2.setLayer(phoneNumber, 99);
+        jLayeredPane2.setLayer(studentID, 99);
+        jLayeredPane2.setLayer(fullname, 99);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -551,17 +569,17 @@ public class Mavenproject1 extends javax.swing.JFrame {
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(447, 447, 447)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(72, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(448, 448, 448)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(studentID, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(78, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(445, 445, 445)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fullname, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(71, Short.MAX_VALUE)))
         );
         jLayeredPane2Layout.setVerticalGroup(
@@ -577,17 +595,17 @@ public class Mavenproject1 extends javax.swing.JFrame {
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(272, 272, 272)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(241, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(214, 214, 214)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(studentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(299, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(148, 148, 148)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(365, Short.MAX_VALUE)))
         );
 
@@ -653,39 +671,18 @@ public class Mavenproject1 extends javax.swing.JFrame {
 
     private void userNameInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameInputFocusGained
         // TODO add your handling code here:
-        if(userNameInput.getText().equals("username")) {
-            userNameInput.setText("");
-            userNameInput.setForeground(new Color(87, 152, 254));
-        }
-        String pw = new String(userPasswordInput.getPassword());
-        if(pw.equals("password    ")) {
-            userPasswordInput.setEchoChar((char)0);
-            userPasswordInput.setForeground(new Color(204, 204, 204));
-        }
+        focusInput(userNameInput, "username");
         
-        String pwConfirm = new String(confirmPasswordInput.getPassword());
-        if(pwConfirm.equals("confirmpassword    ")) {
-            confirmPasswordInput.setEchoChar((char)0);
-            confirmPasswordInput.setForeground(new Color(204, 204, 204));
-        }
     }//GEN-LAST:event_userNameInputFocusGained
 
     private void userNameInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameInputFocusLost
         // TODO add your handling code here:
-        if(userNameInput.getText().equals("")) {
-            userNameInput.setText("username");
-            userNameInput.setForeground(new Color(204,204,204));
-        }
+        unFocusInput(userNameInput, "username", 1);
     }//GEN-LAST:event_userNameInputFocusLost
 
     private void userPasswordInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userPasswordInputFocusGained
         // TODO add your handling code here:
-        String pw = new String(userPasswordInput.getPassword());
-        if(pw.equals("password    ")) {
-            userPasswordInput.setEchoChar('*');
-            userPasswordInput.setForeground(new Color(87, 152, 254));
-            userPasswordInput.setText("");
-        }
+        focusPassword(userPasswordInput, "password    ");
     }//GEN-LAST:event_userPasswordInputFocusGained
 
     private void userPasswordInputComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_userPasswordInputComponentShown
@@ -695,87 +692,188 @@ public class Mavenproject1 extends javax.swing.JFrame {
 
     private void userPasswordInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userPasswordInputFocusLost
         // TODO add your handling code here:
-        String pw = new String(userPasswordInput.getPassword());
-        if(pw.equals("")) {
-            userPasswordInput.setEchoChar((char)0);
-            userPasswordInput.setForeground(new Color(204,204,204));
-            userPasswordInput.setText("password    ");
-        }
+        unFocusPassword(userPasswordInput, "password    ");
     }//GEN-LAST:event_userPasswordInputFocusLost
 
-    private void confirmPasswordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordInputActionPerformed
+    private void confirmPasswordSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordSignupActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_confirmPasswordInputActionPerformed
+    }//GEN-LAST:event_confirmPasswordSignupActionPerformed
 
-    private void confirmPasswordInputComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_confirmPasswordInputComponentShown
+    private void confirmPasswordSignupComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_confirmPasswordSignupComponentShown
         // TODO add your handling code here:
-    }//GEN-LAST:event_confirmPasswordInputComponentShown
+    }//GEN-LAST:event_confirmPasswordSignupComponentShown
 
-    private void confirmPasswordInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordInputFocusLost
+    private void confirmPasswordSignupFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordSignupFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_confirmPasswordInputFocusLost
+        unFocusPassword(confirmPasswordSignup, "confirm password");
+    }//GEN-LAST:event_confirmPasswordSignupFocusLost
 
-    private void confirmPasswordInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordInputFocusGained
+    private void confirmPasswordSignupFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordSignupFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_confirmPasswordInputFocusGained
+        focusPassword(confirmPasswordSignup, "confirm password");
+    }//GEN-LAST:event_confirmPasswordSignupFocusGained
 
-    private void userPasswordInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userPasswordInput1ActionPerformed
+    private void userPasswordSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userPasswordSignUpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userPasswordInput1ActionPerformed
+    }//GEN-LAST:event_userPasswordSignUpActionPerformed
 
-    private void userPasswordInput1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_userPasswordInput1ComponentShown
+    private void userPasswordSignUpComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_userPasswordSignUpComponentShown
         // TODO add your handling code here:
-    }//GEN-LAST:event_userPasswordInput1ComponentShown
+    }//GEN-LAST:event_userPasswordSignUpComponentShown
 
-    private void userPasswordInput1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userPasswordInput1FocusLost
+    private void userPasswordSignUpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userPasswordSignUpFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_userPasswordInput1FocusLost
+        unFocusPassword(userPasswordSignUp, "password    ");
+    }//GEN-LAST:event_userPasswordSignUpFocusLost
 
-    private void userPasswordInput1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userPasswordInput1FocusGained
+    private void userPasswordSignUpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userPasswordSignUpFocusGained
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_userPasswordInput1FocusGained
+        focusPassword(userPasswordSignUp, "password    ");
+    }//GEN-LAST:event_userPasswordSignUpFocusGained
 
-    private void userNameInput1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameInput1FocusLost
+    private void userNameSignUpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameSignUpFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_userNameInput1FocusLost
+         unFocusInput(userNameSignUp, "username",1);
+    }//GEN-LAST:event_userNameSignUpFocusLost
 
-    private void userNameInput1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameInput1FocusGained
+    private void userNameSignUpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameSignUpFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_userNameInput1FocusGained
+        focusInput(userNameSignUp, "username");
+    }//GEN-LAST:event_userNameSignUpFocusGained
 
-    private void backToLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToLoginActionPerformed
-        // TODO add your handling code here:
-        layerForms.removeAll();
-        layerForms.add(loginForm);
-        layerForms.repaint();
-        layerForms.revalidate();
-    }//GEN-LAST:event_backToLoginActionPerformed
-
-    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+    private void signupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupBtnActionPerformed
         // TODO add your handling code here:
         layerForms.removeAll();
         layerForms.add(signupForm);
         layerForms.repaint();
         layerForms.revalidate();
-    }//GEN-LAST:event_kButton3ActionPerformed
+    }//GEN-LAST:event_signupBtnActionPerformed
 
-    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+    private void signBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signBtnActionPerformed
         // TODO add your handling code here:
         layerForms.removeAll();
         layerForms.add(userInfo);
         layerForms.repaint();
         layerForms.revalidate();
-    }//GEN-LAST:event_kButton2ActionPerformed
+    }//GEN-LAST:event_signBtnActionPerformed
 
     private void kButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_kButton5ActionPerformed
 
+    private void backToLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backToLogMouseClicked
+        // TODO add your handling code here:
+        layerForms.removeAll();
+        layerForms.add(loginForm);
+        layerForms.repaint();
+        layerForms.revalidate();
+    }//GEN-LAST:event_backToLogMouseClicked
+
+    private void loginFormMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginFormMouseEntered
+        // TODO add your handling code here:
+        
+        //code run when the app run
+        //refortmat password filed
+        setDefaultPassword(userPasswordInput, confirmPasswordSignup);
+        setCursorPointer();
+        
+        setDefaultPassword(userPasswordSignUp, confirmPasswordSignup);
+    }//GEN-LAST:event_loginFormMouseEntered
+
+    private void fullnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fullnameFocusGained
+        // TODO add your handling code here:
+        focusInput(fullname, "Full name:");
+    }//GEN-LAST:event_fullnameFocusGained
+
+    private void fullnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fullnameFocusLost
+        // TODO add your handling code here:
+        unFocusInput(fullname, "Full name:", 2);
+    }//GEN-LAST:event_fullnameFocusLost
+
+    private void studentIDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_studentIDFocusGained
+        // TODO add your handling code here:
+        focusInput(studentID, "Student ID:");
+    }//GEN-LAST:event_studentIDFocusGained
+
+    private void studentIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_studentIDFocusLost
+        // TODO add your handling code here:
+        unFocusInput(studentID, "Student ID:", 2);
+    }//GEN-LAST:event_studentIDFocusLost
+
+    private void phoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFocusGained
+        // TODO add your handling code here:
+        focusInput(phoneNumber, "Phone number:");
+    }//GEN-LAST:event_phoneNumberFocusGained
+
+    private void phoneNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFocusLost
+        // TODO add your handling code here:
+        unFocusInput(phoneNumber, "Phone number:", 2);
+    }//GEN-LAST:event_phoneNumberFocusLost
+
     /**
      * @param args the command line arguments
      */
 
+    private void setCursorPointer() {
+        Toolkit tkit=Toolkit.getDefaultToolkit();
+        Point point = new Point(0,0);
+        Image img = tkit.getImage("C:\\code\\code_Java\\NetWork\\ExamApp\\mavenproject1\\src\\main\\resources\\pointer.png");
+        Cursor cursor1 = tkit.createCustomCursor(img, point, "pointer");
+        signBtn.setCursor(cursor1);
+        signupBtn.setCursor(cursor1);
+        backToLog.setCursor(cursor1);
+        signInSubmitBtn.setCursor(cursor1);
+    }
+    
+    private void setDefaultPassword(javax.swing.JPasswordField passwordFiled, javax.swing.JPasswordField confirmPasswordFiled) {
+        String pw = new String(userPasswordInput.getPassword());
+        if(pw.equals("password    ")) {
+            passwordFiled.setEchoChar((char)0);
+            passwordFiled.setForeground(new Color(204, 204, 204));
+        }
+        
+        String pwConfirm = new String(confirmPasswordFiled.getPassword());
+        if(pwConfirm.equals("confirm password")) {
+            confirmPasswordFiled.setEchoChar((char)0);
+            confirmPasswordFiled.setForeground(new Color(204, 204, 204));
+        }
+    }
+    
+    private void focusPassword(javax.swing.JPasswordField passwordFiled, String mess) {
+        String pw = new String(passwordFiled.getPassword());
+        if(pw.equals(mess)) {
+            passwordFiled.setEchoChar('*');
+            passwordFiled.setForeground(new Color(87, 152, 254));
+            passwordFiled.setText("");
+        }
+    }
+    private void unFocusPassword(javax.swing.JPasswordField passwordFiled, String mess) {
+        String pw = new String(passwordFiled.getPassword());
+        if(pw.equals("")) {
+            passwordFiled.setEchoChar((char)0);
+            passwordFiled.setForeground(new Color(204,204,204));
+            passwordFiled.setText(mess);
+        }
+    }
+    
+    private void focusInput(javax.swing.JTextField inputField, String mess) {
+        if(inputField.getText().equals(mess)) {
+            inputField.setText("");
+            inputField.setForeground(new Color(87, 152, 254));
+        }
+    }
+    
+    private void unFocusInput(javax.swing.JTextField inputField, String mess, int c) {
+        if(inputField.getText().equals("")) {
+            inputField.setText(mess);
+            if(c==1){
+                inputField.setForeground(new Color(204,204,204));
+            }else{
+                inputField.setForeground(new Color(153,153,153));
+            }
+            
+        }
+    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -813,25 +911,20 @@ public class Mavenproject1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.k33ptoo.components.KButton backToLogin;
-    private javax.swing.JPasswordField confirmPasswordInput;
+    private javax.swing.JLabel backToLog;
+    private javax.swing.JPasswordField confirmPasswordSignup;
+    private javax.swing.JTextField fullname;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private com.k33ptoo.components.KButton kButton1;
-    private com.k33ptoo.components.KButton kButton2;
-    private com.k33ptoo.components.KButton kButton3;
-    private com.k33ptoo.components.KButton kButton4;
     private com.k33ptoo.components.KButton kButton5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
@@ -839,11 +932,16 @@ public class Mavenproject1 extends javax.swing.JFrame {
     private com.k33ptoo.components.KGradientPanel kGradientPanel6;
     private javax.swing.JLayeredPane layerForms;
     private com.k33ptoo.components.KGradientPanel loginForm;
+    private javax.swing.JTextField phoneNumber;
+    private com.k33ptoo.components.KButton signBtn;
+    private com.k33ptoo.components.KButton signInSubmitBtn;
+    private com.k33ptoo.components.KButton signupBtn;
     private com.k33ptoo.components.KGradientPanel signupForm;
+    private javax.swing.JTextField studentID;
     private com.k33ptoo.components.KGradientPanel userInfo;
     private javax.swing.JTextField userNameInput;
-    private javax.swing.JTextField userNameInput1;
+    private javax.swing.JTextField userNameSignUp;
     private javax.swing.JPasswordField userPasswordInput;
-    private javax.swing.JPasswordField userPasswordInput1;
+    private javax.swing.JPasswordField userPasswordSignUp;
     // End of variables declaration//GEN-END:variables
 }
