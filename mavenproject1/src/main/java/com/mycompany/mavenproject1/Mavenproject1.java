@@ -16,8 +16,6 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
 import org.bson.Document;
 /**
  *
@@ -327,7 +325,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
                     .addGroup(loginFormLayout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(jButton1)))
-                .addGap(0, 52, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         signupForm.setkBorderRadius(0);
@@ -341,7 +339,6 @@ public class Mavenproject1 extends javax.swing.JFrame {
         kGradientPanel5.setkEndColor(new java.awt.Color(255, 255, 255));
         kGradientPanel5.setkStartColor(new java.awt.Color(255, 255, 255));
         kGradientPanel5.setOpaque(false);
-        kGradientPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel6.setBackground(new java.awt.Color(255, 255, 255));
         kGradientPanel6.setkBorderRadius(30);
@@ -487,7 +484,20 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
-        kGradientPanel5.add(kGradientPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 400));
+        javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
+        kGradientPanel5.setLayout(kGradientPanel5Layout);
+        kGradientPanel5Layout.setHorizontalGroup(
+            kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(kGradientPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        kGradientPanel5Layout.setVerticalGroup(
+            kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel5Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(kGradientPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         backToLog.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\OneDrive\\Pictures\\backIcon.png")); // NOI18N
         backToLog.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -510,7 +520,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
                     .addComponent(backToLog)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(242, Short.MAX_VALUE))
         );
         signupFormLayout.setVerticalGroup(
@@ -519,7 +529,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 .addGroup(signupFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(signupFormLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(signupFormLayout.createSequentialGroup()
                         .addGap(226, 226, 226)
                         .addComponent(backToLog)
@@ -1173,7 +1183,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
         
         setDefaultPassword(userPasswordSignUp, confirmPasswordSignup);
         renderQuestion();
-        
+        scrollPaneField.setVerticalScrollBar(new ScrollBarCustom());
        
     }//GEN-LAST:event_loginFormMouseEntered
 
@@ -1237,8 +1247,8 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 @Override
                     public void actionPerformed(ActionEvent e) {
                         if(selectedButton.isSelected()) {                         
-                            kBtns[1].setkEndColor(new java.awt.Color(0, 10, 254));
-                            kBtns[1].setkFillButton(true);
+                           currKButton.setkEndColor(new java.awt.Color(0, 10, 254));
+                            currKButton.setkFillButton(true);
                         }
                               
                     }
@@ -1409,7 +1419,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         layerForms.removeAll();
-        layerForms.add(connectForm);
+        layerForms.add(mainLayout);
         layerForms.repaint();
         layerForms.revalidate();
         
