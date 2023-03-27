@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.mavenproject1;
-
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.Color;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import org.bson.Document;
+import java.awt.Cursor;
 /**
  *
  * @author PC
@@ -42,7 +44,18 @@ public class Mavenproject1 extends javax.swing.JFrame {
 
         kButton1 = new com.k33ptoo.components.KButton();
         jPanel1 = new javax.swing.JPanel();
+        resultGroup = new javax.swing.ButtonGroup();
+        kButton4 = new com.k33ptoo.components.KButton();
         layerForms = new javax.swing.JLayeredPane();
+        connectForm = new com.k33ptoo.components.KGradientPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
+        portInput = new javax.swing.JTextField();
+        kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
+        hostNameInput = new javax.swing.JTextField();
+        connectBtn = new com.k33ptoo.components.KButton();
+        kButton3 = new com.k33ptoo.components.KButton();
         loginForm = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel4 = new com.k33ptoo.components.KGradientPanel();
@@ -74,6 +87,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
         phoneNumber = new javax.swing.JTextField();
         studentID = new javax.swing.JTextField();
         fullname = new javax.swing.JTextField();
+        phoneNumber1 = new javax.swing.JTextField();
         mainLayout = new com.k33ptoo.components.KGradientPanel();
         mainLayoutHeader = new com.k33ptoo.components.KGradientPanel();
         jLayeredPane3 = new javax.swing.JLayeredPane();
@@ -81,19 +95,16 @@ public class Mavenproject1 extends javax.swing.JFrame {
         //
         scrollPaneField = new javax.swing.JScrollPane();
         excerciseField = new com.k33ptoo.components.KGradientPanel();
-        submitAnswers = new com.k33ptoo.components.KButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        connectForm = new com.k33ptoo.components.KGradientPanel();
-        jTextField1 = new javax.swing.JTextField();
-        kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
-        portInput = new javax.swing.JTextField();
-        kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
-        hostNameInput = new javax.swing.JTextField();
-        connectBtn = new com.k33ptoo.components.KButton();
+        kGradientPanel8 = new com.k33ptoo.components.KGradientPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        kGradientPanel9 = new com.k33ptoo.components.KGradientPanel();
+        countDownDisplay = new javax.swing.JLabel();
+        submitExBtn = new com.k33ptoo.components.KButton();
+        kGradientPanel11 = new com.k33ptoo.components.KGradientPanel();
+        kGradientPanel12 = new com.k33ptoo.components.KGradientPanel();
+        resultSelectField = new com.k33ptoo.components.KGradientPanel();
 
         kButton1.setText("kButton1");
 
@@ -110,9 +121,194 @@ public class Mavenproject1 extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        kButton4.setText("kButton4");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         layerForms.setPreferredSize(new java.awt.Dimension(800, 519));
+
+        connectForm.setkBorderRadius(0);
+        connectForm.setkEndColor(new java.awt.Color(255, 255, 255));
+        connectForm.setkStartColor(new java.awt.Color(255, 255, 255));
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField1.setText("SEVER AUTHENTICATION");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jPanel2.setOpaque(false);
+
+        kGradientPanel3.setkBorderRadius(14);
+        kGradientPanel3.setkEndColor(new java.awt.Color(204, 204, 204));
+        kGradientPanel3.setkStartColor(new java.awt.Color(204, 204, 204));
+        kGradientPanel3.setOpaque(false);
+
+        portInput.setBackground(new java.awt.Color(204, 204, 204));
+        portInput.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        portInput.setForeground(new java.awt.Color(153, 153, 153));
+        portInput.setText("port");
+        portInput.setBorder(null);
+        portInput.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                portInputFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                portInputFocusLost(evt);
+            }
+        });
+        portInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                portInputActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
+        kGradientPanel3.setLayout(kGradientPanel3Layout);
+        kGradientPanel3Layout.setHorizontalGroup(
+            kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(portInput, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        kGradientPanel3Layout.setVerticalGroup(
+            kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(portInput, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.setkBorderRadius(14);
+        kGradientPanel1.setkEndColor(new java.awt.Color(204, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 204, 204));
+        kGradientPanel1.setOpaque(false);
+
+        hostNameInput.setBackground(new java.awt.Color(204, 204, 204));
+        hostNameInput.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        hostNameInput.setForeground(new java.awt.Color(153, 153, 153));
+        hostNameInput.setText("address");
+        hostNameInput.setBorder(null);
+        hostNameInput.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                hostNameInputFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                hostNameInputFocusLost(evt);
+            }
+        });
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(hostNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(hostNameInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        connectBtn.setBorder(null);
+        connectBtn.setText("Connect");
+        connectBtn.setkBackGroundColor(new java.awt.Color(87, 154, 255));
+        connectBtn.setkBorderRadius(16);
+        connectBtn.setkEndColor(new java.awt.Color(87, 154, 255));
+        connectBtn.setkHoverEndColor(new java.awt.Color(255, 255, 255));
+        connectBtn.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        connectBtn.setkHoverStartColor(new java.awt.Color(87, 154, 255));
+        connectBtn.setkPressedColor(new java.awt.Color(87, 154, 255));
+        connectBtn.setkSelectedColor(new java.awt.Color(87, 154, 255));
+        connectBtn.setkStartColor(new java.awt.Color(87, 154, 255));
+        connectBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                connectBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(connectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(connectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        kButton3.setBorder(null);
+        kButton3.setText("ssomething wrong! try again");
+        kButton3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        kButton3.setkBackGroundColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkBorderRadius(16);
+        kButton3.setkEndColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkHoverEndColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton3.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkSelectedColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkStartColor(new java.awt.Color(255, 255, 255));
+        kButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                kButton3MouseEntered(evt);
+            }
+        });
+        kButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout connectFormLayout = new javax.swing.GroupLayout(connectForm);
+        connectForm.setLayout(connectFormLayout);
+        connectFormLayout.setHorizontalGroup(
+            connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(connectFormLayout.createSequentialGroup()
+                .addContainerGap(275, Short.MAX_VALUE)
+                .addGroup(connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, connectFormLayout.createSequentialGroup()
+                        .addGroup(connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(263, 263, 263))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, connectFormLayout.createSequentialGroup()
+                        .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(303, 303, 303))))
+        );
+        connectFormLayout.setVerticalGroup(
+            connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(connectFormLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(123, Short.MAX_VALUE))
+        );
 
         loginForm.setkBorderRadius(0);
         loginForm.setkEndColor(new java.awt.Color(87, 163, 253));
@@ -122,6 +318,11 @@ public class Mavenproject1 extends javax.swing.JFrame {
         loginForm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 loginFormMouseEntered(evt);
+            }
+        });
+        loginForm.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                loginFormComponentShown(evt);
             }
         });
 
@@ -223,7 +424,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\code\\code_Java\\NetWork\\ExamApp\\mavenproject1\\src\\main\\java\\com\\mycompany\\mavenproject1\\userIconn.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userIconn.png"))); // NOI18N
         jLabel3.setPreferredSize(new java.awt.Dimension(80, 80));
 
         jLabel8.setForeground(new java.awt.Color(51, 255, 51));
@@ -605,11 +806,26 @@ public class Mavenproject1 extends javax.swing.JFrame {
             }
         });
 
+        phoneNumber1.setBackground(new java.awt.Color(238, 232, 232));
+        phoneNumber1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        phoneNumber1.setForeground(new java.awt.Color(153, 153, 153));
+        phoneNumber1.setText("Phone number:");
+        phoneNumber1.setBorder(null);
+        phoneNumber1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phoneNumber1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phoneNumber1FocusLost(evt);
+            }
+        });
+
         jLayeredPane2.setLayer(jLabel5, 1);
         jLayeredPane2.setLayer(kButton5, 9999);
         jLayeredPane2.setLayer(phoneNumber, 99);
         jLayeredPane2.setLayer(studentID, 99);
         jLayeredPane2.setLayer(fullname, 99);
+        jLayeredPane2.setLayer(phoneNumber1, 99);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -622,11 +838,13 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(540, 540, 540)
                     .addComponent(kButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(458, Short.MAX_VALUE)))
+                    .addContainerGap(168, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(447, 447, 447)
-                    .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(phoneNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(72, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
@@ -648,11 +866,13 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(340, 340, 340)
                     .addComponent(kButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(289, Short.MAX_VALUE)))
+                    .addContainerGap(397, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addGap(272, 272, 272)
                     .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(272, 272, 272)
+                    .addComponent(phoneNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(241, Short.MAX_VALUE)))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
@@ -676,14 +896,23 @@ public class Mavenproject1 extends javax.swing.JFrame {
         );
         userInfoLayout.setVerticalGroup(
             userInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userInfoLayout.createSequentialGroup()
-                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        mainLayout.setForeground(new java.awt.Color(255, 255, 255));
         mainLayout.setkBorderRadius(0);
         mainLayout.setkEndColor(new java.awt.Color(255, 255, 255));
         mainLayout.setkStartColor(new java.awt.Color(255, 255, 255));
+        mainLayout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mainLayoutMouseEntered(evt);
+            }
+        });
+        mainLayout.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                mainLayoutComponentShown(evt);
+            }
+        });
 
         mainLayoutHeader.setkBorderRadius(0);
         mainLayoutHeader.setkEndColor(new java.awt.Color(87, 154, 253));
@@ -693,7 +922,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
         mainLayoutHeader.setLayout(mainLayoutHeaderLayout);
         mainLayoutHeaderLayout.setHorizontalGroup(
             mainLayoutHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 802, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         mainLayoutHeaderLayout.setVerticalGroup(
             mainLayoutHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -719,11 +948,11 @@ public class Mavenproject1 extends javax.swing.JFrame {
         excerciseField.setLayout(excerciseFieldLayout);
         excerciseFieldLayout.setHorizontalGroup(
             excerciseFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 652, Short.MAX_VALUE)
+            .addGap(0, 635, Short.MAX_VALUE)
         );
         excerciseFieldLayout.setVerticalGroup(
             excerciseFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
         scrollPaneField.setViewportView(excerciseField);
@@ -732,16 +961,183 @@ public class Mavenproject1 extends javax.swing.JFrame {
         kGradientPanel10.setLayout(kGradientPanel10Layout);
         kGradientPanel10Layout.setHorizontalGroup(
             kGradientPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(scrollPaneField, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(scrollPaneField, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         kGradientPanel10Layout.setVerticalGroup(
             kGradientPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPaneField, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+            .addComponent(scrollPaneField)
+        );
+
+        kGradientPanel8.setkBorderRadius(30);
+        kGradientPanel8.setkEndColor(new java.awt.Color(87, 154, 255));
+        kGradientPanel8.setkFillBackground(false);
+        kGradientPanel8.setkStartColor(new java.awt.Color(87, 154, 255));
+        kGradientPanel8.setOpaque(false);
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Nguyen van teo");
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("52100999");
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setText("user023124");
+
+        kGradientPanel9.setkEndColor(new java.awt.Color(87, 154, 255));
+        kGradientPanel9.setkFillBackground(false);
+        kGradientPanel9.setkStartColor(new java.awt.Color(87, 154, 255));
+        kGradientPanel9.setOpaque(false);
+
+        countDownDisplay.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        countDownDisplay.setForeground(new java.awt.Color(255, 51, 51));
+        countDownDisplay.setText("10:00");
+
+        javax.swing.GroupLayout kGradientPanel9Layout = new javax.swing.GroupLayout(kGradientPanel9);
+        kGradientPanel9.setLayout(kGradientPanel9Layout);
+        kGradientPanel9Layout.setHorizontalGroup(
+            kGradientPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel9Layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(countDownDisplay)
+                .addGap(32, 32, 32))
+        );
+        kGradientPanel9Layout.setVerticalGroup(
+            kGradientPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(countDownDisplay)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        submitExBtn.setBorder(null);
+        submitExBtn.setText("submit");
+        submitExBtn.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        submitExBtn.setkBackGroundColor(new java.awt.Color(87, 154, 255));
+        submitExBtn.setkEndColor(new java.awt.Color(87, 154, 255));
+        submitExBtn.setkHoverEndColor(new java.awt.Color(87, 203, 250));
+        submitExBtn.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        submitExBtn.setkHoverStartColor(new java.awt.Color(87, 154, 255));
+        submitExBtn.setkSelectedColor(new java.awt.Color(87, 154, 255));
+        submitExBtn.setkStartColor(new java.awt.Color(87, 154, 255));
+        submitExBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitExBtnActionPerformed(evt);
+            }
+        });
+
+        kGradientPanel11.setkEndColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel11.setkFillBackground(false);
+        kGradientPanel11.setkStartColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel11.setOpaque(false);
+
+        kGradientPanel12.setkEndColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel12.setkFillBackground(false);
+        kGradientPanel12.setkStartColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel12.setOpaque(false);
+        kGradientPanel12.setPreferredSize(new java.awt.Dimension(190, 30));
+
+        javax.swing.GroupLayout kGradientPanel12Layout = new javax.swing.GroupLayout(kGradientPanel12);
+        kGradientPanel12.setLayout(kGradientPanel12Layout);
+        kGradientPanel12Layout.setHorizontalGroup(
+            kGradientPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        kGradientPanel12Layout.setVerticalGroup(
+            kGradientPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        resultSelectField.setkEndColor(new java.awt.Color(255, 255, 255));
+        resultSelectField.setkFillBackground(false);
+        resultSelectField.setkStartColor(new java.awt.Color(255, 255, 255));
+        resultSelectField.setOpaque(false);
+        resultSelectField.setPreferredSize(new java.awt.Dimension(190, 30));
+
+        javax.swing.GroupLayout resultSelectFieldLayout = new javax.swing.GroupLayout(resultSelectField);
+        resultSelectField.setLayout(resultSelectFieldLayout);
+        resultSelectFieldLayout.setHorizontalGroup(
+            resultSelectFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        resultSelectFieldLayout.setVerticalGroup(
+            resultSelectFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout kGradientPanel11Layout = new javax.swing.GroupLayout(kGradientPanel11);
+        kGradientPanel11.setLayout(kGradientPanel11Layout);
+        kGradientPanel11Layout.setHorizontalGroup(
+            kGradientPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(kGradientPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(kGradientPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(resultSelectField, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        kGradientPanel11Layout.setVerticalGroup(
+            kGradientPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(kGradientPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(resultSelectField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout kGradientPanel8Layout = new javax.swing.GroupLayout(kGradientPanel8);
+        kGradientPanel8.setLayout(kGradientPanel8Layout);
+        kGradientPanel8Layout.setHorizontalGroup(
+            kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel8Layout.createSequentialGroup()
+                .addGroup(kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(kGradientPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(kGradientPanel8Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addGroup(kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(kGradientPanel8Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(submitExBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(kGradientPanel8Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(kGradientPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        kGradientPanel8Layout.setVerticalGroup(
+            kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel8Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addComponent(kGradientPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(kGradientPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(submitExBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         jLayeredPane3.setLayer(kGradientPanel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(kGradientPanel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
         jLayeredPane3.setLayout(jLayeredPane3Layout);
@@ -749,27 +1145,20 @@ public class Mavenproject1 extends javax.swing.JFrame {
             jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane3Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(kGradientPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(kGradientPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jLayeredPane3Layout.setVerticalGroup(
             jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(kGradientPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                        .addComponent(kGradientPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(kGradientPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-
-        submitAnswers.setText("submit");
-        submitAnswers.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitAnswersActionPerformed(evt);
-            }
-        });
-
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(51, 255, 0));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout mainLayoutLayout = new javax.swing.GroupLayout(mainLayout);
         mainLayout.setLayout(mainLayoutLayout);
@@ -778,227 +1167,21 @@ public class Mavenproject1 extends javax.swing.JFrame {
             .addComponent(mainLayoutHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainLayoutLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(mainLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(submitAnswers, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         mainLayoutLayout.setVerticalGroup(
             mainLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainLayoutLayout.createSequentialGroup()
                 .addComponent(mainLayoutHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(mainLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainLayoutLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLayeredPane3))
-                    .addGroup(mainLayoutLayout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(submitAnswers, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLayeredPane3))
         );
 
-        connectForm.setkBorderRadius(0);
-        connectForm.setkEndColor(new java.awt.Color(255, 255, 255));
-        connectForm.setkStartColor(new java.awt.Color(255, 255, 255));
-
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setText("SEVER AUTHENTICATION");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        kGradientPanel7.setkBorderRadius(30);
-        kGradientPanel7.setkEndColor(new java.awt.Color(235, 92, 92));
-        kGradientPanel7.setkStartColor(new java.awt.Color(235, 92, 92));
-        kGradientPanel7.setOpaque(false);
-
-        jTextField2.setBackground(new java.awt.Color(236, 92, 92));
-        jTextField2.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("something wrong! try again");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
-        kGradientPanel7.setLayout(kGradientPanel7Layout);
-        kGradientPanel7Layout.setHorizontalGroup(
-            kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-        kGradientPanel7Layout.setVerticalGroup(
-            kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        jPanel2.setOpaque(false);
-
-        kGradientPanel3.setkBorderRadius(14);
-        kGradientPanel3.setkEndColor(new java.awt.Color(204, 204, 204));
-        kGradientPanel3.setkStartColor(new java.awt.Color(204, 204, 204));
-        kGradientPanel3.setOpaque(false);
-
-        portInput.setBackground(new java.awt.Color(204, 204, 204));
-        portInput.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        portInput.setForeground(new java.awt.Color(153, 153, 153));
-        portInput.setText("port");
-        portInput.setBorder(null);
-        portInput.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                portInputFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                portInputFocusLost(evt);
-            }
-        });
-        portInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portInputActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
-        kGradientPanel3.setLayout(kGradientPanel3Layout);
-        kGradientPanel3Layout.setHorizontalGroup(
-            kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(portInput, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        kGradientPanel3Layout.setVerticalGroup(
-            kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(portInput, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        kGradientPanel1.setkBorderRadius(14);
-        kGradientPanel1.setkEndColor(new java.awt.Color(204, 204, 204));
-        kGradientPanel1.setkStartColor(new java.awt.Color(204, 204, 204));
-        kGradientPanel1.setOpaque(false);
-
-        hostNameInput.setBackground(new java.awt.Color(204, 204, 204));
-        hostNameInput.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        hostNameInput.setForeground(new java.awt.Color(153, 153, 153));
-        hostNameInput.setText("address");
-        hostNameInput.setBorder(null);
-        hostNameInput.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                hostNameInputFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                hostNameInputFocusLost(evt);
-            }
-        });
-
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hostNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(hostNameInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        connectBtn.setBorder(null);
-        connectBtn.setText("Connect");
-        connectBtn.setkBackGroundColor(new java.awt.Color(87, 154, 255));
-        connectBtn.setkBorderRadius(16);
-        connectBtn.setkEndColor(new java.awt.Color(87, 154, 255));
-        connectBtn.setkHoverEndColor(new java.awt.Color(255, 255, 255));
-        connectBtn.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        connectBtn.setkHoverStartColor(new java.awt.Color(87, 154, 255));
-        connectBtn.setkPressedColor(new java.awt.Color(87, 154, 255));
-        connectBtn.setkSelectedColor(new java.awt.Color(87, 154, 255));
-        connectBtn.setkStartColor(new java.awt.Color(87, 154, 255));
-        connectBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                connectBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(connectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(connectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout connectFormLayout = new javax.swing.GroupLayout(connectForm);
-        connectForm.setLayout(connectFormLayout);
-        connectFormLayout.setHorizontalGroup(
-            connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(connectFormLayout.createSequentialGroup()
-                .addContainerGap(299, Short.MAX_VALUE)
-                .addGroup(connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(connectFormLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(269, Short.MAX_VALUE))
-                    .addGroup(connectFormLayout.createSequentialGroup()
-                        .addGroup(connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        connectFormLayout.setVerticalGroup(
-            connectFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(connectFormLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
+        layerForms.setLayer(connectForm, 9999);
         layerForms.setLayer(loginForm, javax.swing.JLayeredPane.MODAL_LAYER);
         layerForms.setLayer(signupForm, javax.swing.JLayeredPane.MODAL_LAYER);
         layerForms.setLayer(userInfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         layerForms.setLayer(mainLayout, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        layerForms.setLayer(connectForm, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layerFormsLayout = new javax.swing.GroupLayout(layerForms);
         layerForms.setLayout(layerFormsLayout);
@@ -1006,13 +1189,15 @@ public class Mavenproject1 extends javax.swing.JFrame {
             layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(signupForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE))
+                .addComponent(signupForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 903, Short.MAX_VALUE))
             .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(userInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE))
+                .addComponent(userInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 903, Short.MAX_VALUE))
             .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(mainLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(connectForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layerFormsLayout.createSequentialGroup()
+                    .addComponent(connectForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 104, Short.MAX_VALUE)))
         );
         layerFormsLayout.setVerticalGroup(
             layerFormsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1127,7 +1312,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
         layerForms.repaint();
         layerForms.revalidate();
     }//GEN-LAST:event_signupBtnActionPerformed
-
+private Socket client;
     private void signBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signBtnActionPerformed
         try {
             // TODO add your handling code here:
@@ -1135,7 +1320,6 @@ public class Mavenproject1 extends javax.swing.JFrame {
             String pass = userPasswordInput.getText();
             Document request = new Document();
             request.append("username", us).append("password", pass).append("activity", "login");
-            Socket client = new Socket("192.168.21.236", 5579);
             BufferedReader bf = new BufferedReader(new InputStreamReader(client.getInputStream()));
             PrintWriter pw = new PrintWriter(client.getOutputStream());
             pw.println(request.toJson());
@@ -1163,8 +1347,74 @@ public class Mavenproject1 extends javax.swing.JFrame {
 
     private void kButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton5ActionPerformed
         // TODO add your handling code here:
+        String fullName = fullname.getText();
+        String studentId = studentID.getText();
+        String phone = phoneNumber.getText();
+        if(fullName.equals("Full name:")){
+            fullname.setText("Please enter your name");
+            fullname.setForeground(new Color(255,0,0));
+        }else if(studentId.equals("Student ID:")) {
+            studentID.setText("Please enter your student ID");
+            studentID.setForeground(new Color(255,0,0));
+        }else if(phone.equals("Phone number:")) {
+            phoneNumber.setText("Please enter your phone number");
+            phoneNumber.setForeground(new Color(255,0,0));
+        }else{
+            layerForms.removeAll();
+            layerForms.add(mainLayout);
+            layerForms.repaint();
+            layerForms.revalidate();
+            loadInfo();
+            startTimer();
+        }
+        
+        
     }//GEN-LAST:event_kButton5ActionPerformed
 
+    private void loadInfo() {
+        String fullName = fullname.getText();
+        String studentId = studentID.getText();
+        String phone = phoneNumber.getText();
+        jLabel10.setText("Full name: "+fullName);
+        jLabel11.setText("Student ID: "+studentId);
+        jLabel12.setText("Phone: "+phone);
+    }
+ 
+int currentTime = 599;
+Timer t;
+   private void startTimer() {
+       int del = 1000;
+       int per = 1000;
+       t = new Timer();
+       
+       t.scheduleAtFixedRate(new TimerTask() {
+            public void run()
+            {
+                handleTime();
+            }
+        }, del, per);
+       
+   } 
+   
+   private void handleTime() {
+       int m;
+       int s;
+       String time="";
+       if(currentTime>=60) {
+           m = currentTime/60;
+           s = currentTime%60;
+           time = "0"+m+":";
+           if(s>=10) {
+               time+=s;
+           }else{
+               time+="0"+s;
+           }
+       }
+       countDownDisplay.setText(time);
+       if(currentTime == 1) t.cancel();
+       currentTime--;
+   }
+   
     private void backToLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backToLogMouseClicked
         // TODO add your handling code here:
         layerForms.removeAll();
@@ -1172,22 +1422,96 @@ public class Mavenproject1 extends javax.swing.JFrame {
         layerForms.repaint();
         layerForms.revalidate();
     }//GEN-LAST:event_backToLogMouseClicked
-
+int isFirstTime = 1;
     private void loginFormMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginFormMouseEntered
+       // TODO add your handling code here:
         // TODO add your handling code here:
         
-        //code run when the app run
+       if(isFirstTime==1) {
+            //code run when the app run
         //refortmat password filed
         setDefaultPassword(userPasswordInput, confirmPasswordSignup);
         setCursorPointer();
         
         setDefaultPassword(userPasswordSignUp, confirmPasswordSignup);
         renderQuestion();
+        generateStatusField();
         scrollPaneField.setVerticalScrollBar(new ScrollBarCustom());
-       
+//        setFirstLayout();
+        isFirstTime = 2;
+       }
     }//GEN-LAST:event_loginFormMouseEntered
 
 
+    private void setFirstLayout() {
+         layerForms.removeAll();
+        layerForms.add(connectForm);
+        layerForms.repaint();
+        layerForms.revalidate();
+    }
+    
+    private void generateStatusField() {
+        RadioButtonCustom testRadioBtn = new RadioButtonCustom();        
+        RadioButtonCustom resultRadioBtn = new RadioButtonCustom();
+        testRadioBtn.setForeground(new Color(255,255,255));
+        testRadioBtn.setFont(new java.awt.Font("Dialog", 1, 12));        
+        resultRadioBtn.setFont(new java.awt.Font("Dialog", 1, 12));
+
+        testRadioBtn.setText("test");        
+        resultRadioBtn.setText("view score");
+        
+        customRadio(testRadioBtn);        
+        customRadio(resultRadioBtn);
+        testRadioBtn.setBackground(new Color(76, 246, 43));       
+        resultRadioBtn.setBackground(new Color(76, 246, 43));
+
+        kGradientPanel11.setPreferredSize(new Dimension(180, 80));
+        kGradientPanel12.setLayout(new BorderLayout());        
+        resultSelectField.setLayout(new BorderLayout());
+        resultGroup.add(testRadioBtn);        
+        resultGroup.add(resultRadioBtn);
+        kGradientPanel12.add(testRadioBtn);    
+        resultSelectField.add(resultRadioBtn);
+        kGradientPanel12.setkStartColor(new java.awt.Color(253, 217, 89));                 
+        kGradientPanel12.setkEndColor(new java.awt.Color(253, 217, 89));
+        kGradientPanel12.setkFillBackground(true);
+        testRadioBtn.setSelected(true);
+        
+        
+        testRadioBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 kGradientPanel12.setkStartColor(new java.awt.Color(253, 217, 89));                 
+                 kGradientPanel12.setkEndColor(new java.awt.Color(253, 217, 89));
+                 kGradientPanel12.setkFillBackground(true);
+                 testRadioBtn.setForeground(new Color(255,255,255));
+                 resultSelectField.setkStartColor(new java.awt.Color(255, 255,255));                 
+                 resultSelectField.setkEndColor(new java.awt.Color(255, 255,255));
+                 resultRadioBtn.setForeground(new Color(0,0,0));
+
+            }
+        });
+        
+        resultRadioBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 resultSelectField.setkStartColor(new java.awt.Color(253, 217, 89));                 
+                 resultSelectField.setkEndColor(new java.awt.Color(253, 217, 89));
+                 resultSelectField.setkFillBackground(true);
+                 resultRadioBtn.setForeground(new Color(255,255,255));
+                 kGradientPanel12.setkStartColor(new java.awt.Color(255, 255,255));                 
+                 kGradientPanel12.setkEndColor(new java.awt.Color(255, 255,255));
+                 testRadioBtn.setForeground(new Color(0,0,0));
+            }
+        });
+
+    }
+    
+    private void customRadio(RadioButtonCustom radioBtn) {
+        radioBtn.setPreferredSize(new Dimension(180, 24));
+        radioBtn.setOpaque(false);
+        radioBtn.setForeground(new Color(0,0,0));
+    }
     
  private RadioButtonCustom[][] radioBtns = new  RadioButtonCustom[10][3];
  private javax.swing.ButtonGroup[] btnGroup = new  javax.swing.ButtonGroup[10];
@@ -1203,37 +1527,32 @@ public class Mavenproject1 extends javax.swing.JFrame {
           com.k33ptoo.components.KButton[] kBtns = new com.k33ptoo.components.KButton[10];
           
           //ceate header
-          for(int i=0;i<10;i++) {
-              kBtns[i] = new com.k33ptoo.components.KButton();
-          }
           generateNumQuestion(kBtns);
-         int i=0;
-        for(i=0;i<10;i++) { 
+        for(int indexNumQuestion=0;indexNumQuestion<10;indexNumQuestion++) { 
             posY+=20+panelHeight;
             panelHeight = 134;
             excerciseFieldHieght+=panelHeight+20;
             //custom panel
-            panels[i] = new com.k33ptoo.components.KGradientPanel();
-            panels[i].setLayout(new GridBagLayout());
+            panels[indexNumQuestion] = new com.k33ptoo.components.KGradientPanel();
+            panels[indexNumQuestion].setLayout(new GridBagLayout());
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.anchor = GridBagConstraints.WEST;
             gbc.gridx=0;
             gbc.gridy=0;
             gbc.fill= GridBagConstraints.HORIZONTAL;
-            panels[i].setkStartColor(new java.awt.Color(87, 154, 254));
-            panels[i].setkEndColor(new java.awt.Color(87, 154, 254));
-            panels[i].setOpaque(false);
-            panels[i].setBounds(30,posY,540, panelHeight); 
-            panels[i].setkBorderRadius(30);
-            panels[i].setkFillBackground(false);
-            panels[i].setBorder(BorderFactory.createEmptyBorder(20, 20, 10, 10));
+            panels[indexNumQuestion].setkStartColor(new java.awt.Color(87, 154, 254));
+            panels[indexNumQuestion].setkEndColor(new java.awt.Color(87, 154, 254));
+            panels[indexNumQuestion].setOpaque(false);
+            panels[indexNumQuestion].setBounds(30,posY,540, panelHeight); 
+            panels[indexNumQuestion].setkBorderRadius(30);
+            panels[indexNumQuestion].setkFillBackground(false);
+            panels[indexNumQuestion].setBorder(BorderFactory.createEmptyBorder(20, 20, 10, 10));
             //generate content     
-            textAreas[i] = new  javax.swing.JTextArea();
-            addALabel(panels[i], textAreas[i], "Question "+i+1+": Lưu ý rằng, khi sử dụng BorderLayout, mỗi vị trí chỉ có thể, chứa một phần tử. Do đó \nnếu bạn muốn đặt nhiều ph"+" Lưu ý rằng, khi sử dụng BorderLayout, mỗi vị trí chỉ có thể chứa một phần tử. Do đó".length(), gbc);
-            excerciseField.add(panels[i]);
+            textAreas[indexNumQuestion] = new  javax.swing.JTextArea();
+            addALabel(panels[indexNumQuestion], textAreas[indexNumQuestion], "Question "+indexNumQuestion+1+": Lưu ý rằng, khi sử dụng BorderLayout, mỗi vị trí chỉ có thể, chứa một phần tử. Do đó \nnếu bạn muốn đặt nhiều ph"+" Lưu ý rằng, khi sử dụng BorderLayout, mỗi vị trí chỉ có thể chứa một phần tử. Do đó".length(), gbc);
+            excerciseField.add(panels[indexNumQuestion]);
             //create answer
-            btnGroup[i] = new javax.swing.ButtonGroup();
-            com.k33ptoo.components.KButton currKButton = kBtns[i];
+            btnGroup[indexNumQuestion] = new javax.swing.ButtonGroup();
             int j=0;
             for(j=0;j<3;j++) {
                  gbc.gridwidth=1;
@@ -1241,23 +1560,12 @@ public class Mavenproject1 extends javax.swing.JFrame {
                 gbc.gridx=0;
                 gbc.gridy=j+1;
                 gbc.insets = new Insets(5, 10, 5, 0);
-               radioBtns[i][j]  = new RadioButtonCustom();
-               RadioButtonCustom selectedButton = radioBtns[i][j];
-               radioBtns[i][j].addActionListener(new ActionListener() {
-                @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if(selectedButton.isSelected()) {                         
-                           currKButton.setkEndColor(new java.awt.Color(0, 10, 254));
-                            currKButton.setkFillButton(true);
-                        }
-                              
-                    }
-                });
-               radioBtns[i][j].setText(i+" "+j+"You can edit directly the pom.xml file of the project. Make sure you decl");
-                panels[i].add(radioBtns[i][j], gbc);
-                btnGroup[i].add(radioBtns[i][j]);
+               radioBtns[indexNumQuestion][j]  = new RadioButtonCustom();
+               radioBtns[indexNumQuestion][j].setText(indexNumQuestion+" You can edit directly the pom.xml file of the project. Make sure you decl");
+                panels[indexNumQuestion].add(radioBtns[indexNumQuestion][j], gbc);
+                btnGroup[indexNumQuestion].add(radioBtns[indexNumQuestion][j]);
             }
-            createAnswerGrpoup(btnGroup[i], radioBtns[i]);
+            createAnswerGrpoup(btnGroup[indexNumQuestion], radioBtns[indexNumQuestion]);
 
         }
         excerciseField.setPreferredSize(new Dimension(632, excerciseFieldHieght+20));
@@ -1275,36 +1583,20 @@ public class Mavenproject1 extends javax.swing.JFrame {
         return arrAnswers;
     }
     
-    private String[] ga() {
-        String[] arrAnswers = new String[10];
-        for(int i=0;i<10;i++) {
-//            for(int j=0; i<3; j++) {
-//                if(radioBtns[i][j].isSelected()) {
-//                    arrAnswers[i] = 
-//                }
-//            }
-//            ButtonModel selectedModel = btnGroup[i].getSelection();
-//                if (selectedModel != null) {
-//                    if (selectedModel == radioBtns[i][0].getModel()) {
-//                        arrAnswers[i] = "a";
-//                    } else if (selectedModel == radioBtns[i][1].getModel()) {
-//                         arrAnswers[i] = "b";
-//                    } else if (selectedModel == radioBtns[i][2].getModel()) {
-//                         arrAnswers[i] = "c";
-//                    }
-//                
-//            }
-        }
-        return arrAnswers;
-    }
     
     private void generateNumQuestion(com.k33ptoo.components.KButton[] kBtns) {
-        int i=1;
         mainLayoutHeader.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        for(com.k33ptoo.components.KButton btn: kBtns) {
-            btn.setBorder(null);
-            btn.setText(""+i);
+        for(int indx=0;indx<10;indx++) {
+            kBtns[indx] = new com.k33ptoo.components.KButton();
+            customCircleBtn(kBtns[indx], gbc, indx+1);
+            mainLayoutHeader.add(kBtns[indx], gbc);
+        }
+    }
+    
+    private void customCircleBtn(com.k33ptoo.components.KButton btn, GridBagConstraints gbc, int index) {
+        btn.setBorder(null);
+            btn.setText(""+index);
             btn.setEnabled(false);
             btn.setFocusable(false);
             btn.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -1318,13 +1610,9 @@ public class Mavenproject1 extends javax.swing.JFrame {
             btn.setkSelectedColor(new java.awt.Color(255, 255, 255));
             btn.setkStartColor(new java.awt.Color(255, 255, 255));
             btn.setPreferredSize(new java.awt.Dimension(30, 30));
-            gbc.gridx=i;
+            gbc.gridx=index;
             gbc.gridy=0;
             gbc.insets = new Insets(10, 0, 10, 10);
-            mainLayoutHeader.add(btn, gbc);
-            
-            i++;
-        }
     }
     
     private void createAnswerGrpoup( javax.swing.ButtonGroup btnGr, javax.swing.JRadioButton[] radioBtns) {
@@ -1341,6 +1629,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
     private void fullnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fullnameFocusGained
         // TODO add your handling code here:
         focusInput(fullname, "Full name:");
+        focusInput(fullname, "Please enter your name");
     }//GEN-LAST:event_fullnameFocusGained
 
     private void fullnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fullnameFocusLost
@@ -1351,6 +1640,7 @@ public class Mavenproject1 extends javax.swing.JFrame {
     private void studentIDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_studentIDFocusGained
         // TODO add your handling code here:
         focusInput(studentID, "Student ID:");
+        focusInput(studentID, "Please enter your student ID");
     }//GEN-LAST:event_studentIDFocusGained
 
     private void studentIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_studentIDFocusLost
@@ -1361,23 +1651,13 @@ public class Mavenproject1 extends javax.swing.JFrame {
     private void phoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFocusGained
         // TODO add your handling code here:
         focusInput(phoneNumber, "Phone number:");
+        focusInput(phoneNumber, "Please enter your phone number");
     }//GEN-LAST:event_phoneNumberFocusGained
 
     private void phoneNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFocusLost
         // TODO add your handling code here:
         unFocusInput(phoneNumber, "Phone number:", 2);
     }//GEN-LAST:event_phoneNumberFocusLost
-
-    private void submitAnswersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitAnswersActionPerformed
-        // TODO add your handling code here:
-        int[] answers = getAnswers();
-        String res = "";
-        for(int i=0;i<10;i++) {
-            res+=i+": "+answers[i]+"\n";
-        }
-        
-        jTextArea1.setText(res);
-    }//GEN-LAST:event_submitAnswersActionPerformed
 
     private void signInSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInSubmitBtnActionPerformed
         // TODO add your handling code here:
@@ -1412,14 +1692,10 @@ public class Mavenproject1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_signInSubmitBtnActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         layerForms.removeAll();
-        layerForms.add(mainLayout);
+        layerForms.add(userInfo);
         layerForms.repaint();
         layerForms.revalidate();
         
@@ -1427,55 +1703,113 @@ public class Mavenproject1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void hostNameInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_hostNameInputFocusGained
+    private void submitExBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitExBtnActionPerformed
         // TODO add your handling code here:
-        focusInput(hostNameInput, "address");
-        hostNameInput.setForeground(new Color(33, 35, 36));
-    }//GEN-LAST:event_hostNameInputFocusGained
+    }//GEN-LAST:event_submitExBtnActionPerformed
+
+    private void mainLayoutComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_mainLayoutComponentShown
+        // TODO add your handling code here:
+        jLabel10.setText("teo");
+    }//GEN-LAST:event_mainLayoutComponentShown
+
+    private void mainLayoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainLayoutMouseEntered
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_mainLayoutMouseEntered
+
+    private void loginFormComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_loginFormComponentShown
+       
+    }//GEN-LAST:event_loginFormComponentShown
+
+    private void connectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectBtnActionPerformed
+        // TODO add your handling code here:
+       layerForms.removeAll();
+                        layerForms.add(loginForm);
+                        layerForms.repaint();
+                        layerForms.revalidate();
+//                try {
+//                        client = new Socket("192.168.21.236", 5579);
+//                         layerForms.removeAll();
+//                        layerForms.add(userInfo);
+//                        layerForms.repaint();
+//                        layerForms.revalidate();
+//                    }catch(IOException ex) {
+//                        System.out.println(ex);
+//                         kButton3.setkStartColor(new java.awt.Color(235,92,92));
+//                        kButton3.setkEndColor(new java.awt.Color(235,92,92));
+//                        kButton3.setText("something wrong! try again");
+//
+//                    }
+    }//GEN-LAST:event_connectBtnActionPerformed
 
     private void hostNameInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_hostNameInputFocusLost
         // TODO add your handling code here:
         unFocusInput(hostNameInput, "address", 1);
     }//GEN-LAST:event_hostNameInputFocusLost
 
-    private void portInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_portInputFocusGained
+    private void hostNameInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_hostNameInputFocusGained
         // TODO add your handling code here:
-        focusInput(portInput, "port");
-        portInput.setForeground(new Color(33, 35, 36));
-    }//GEN-LAST:event_portInputFocusGained
-
-    private void portInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_portInputFocusLost
-        // TODO add your handling code here:
-        unFocusInput(portInput, "port", 1);
-        
-    }//GEN-LAST:event_portInputFocusLost
-
-    private void connectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_connectBtnActionPerformed
+        focusInput(hostNameInput, "address");
+        hostNameInput.setForeground(new Color(33, 35, 36));
+         kButton3.setkStartColor(new java.awt.Color(255,255,255));
+        kButton3.setkEndColor(new java.awt.Color(255,255,255));
+        kButton3.setText("something wrong! try againn");
+    }//GEN-LAST:event_hostNameInputFocusGained
 
     private void portInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_portInputActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void portInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_portInputFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+        unFocusInput(portInput, "port", 1);
+
+    }//GEN-LAST:event_portInputFocusLost
+
+    private void portInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_portInputFocusGained
+        // TODO add your handling code here:
+        focusInput(portInput, "port");
+        portInput.setForeground(new Color(33, 35, 36));
+         kButton3.setkStartColor(new java.awt.Color(255,255,255));
+        kButton3.setkEndColor(new java.awt.Color(255,255,255));
+        kButton3.setText("something wrong! try againn");
+    }//GEN-LAST:event_portInputFocusGained
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_kButton3ActionPerformed
+
+    private void kButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kButton3MouseEntered
+        // TODO add your handling code here:
+        kButton3.setkStartColor(new java.awt.Color(255,255,255));
+        kButton3.setkEndColor(new java.awt.Color(255,255,255));
+        kButton3.setText("something wrong! try againn");
+    }//GEN-LAST:event_kButton3MouseEntered
+
+    private void phoneNumber1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumber1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumber1FocusGained
+
+    private void phoneNumber1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumber1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumber1FocusLost
 
     /**
      * @param args the command line arguments
      */
 
     private void setCursorPointer() {
-        Toolkit tkit=Toolkit.getDefaultToolkit();
-        Point point = new Point(0,0);
-        Image img = tkit.getImage("C:\\code\\code_Java\\NetWork\\ExamApp\\mavenproject1\\src\\main\\resources\\pointer.png");
-        Cursor cursor1 = tkit.createCustomCursor(img, point, "pointer");
-        signBtn.setCursor(cursor1);
-        signupBtn.setCursor(cursor1);
-        backToLog.setCursor(cursor1);
-        signInSubmitBtn.setCursor(cursor1);
-        connectBtn.setCursor(cursor1);
+        signBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        signupBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        backToLog.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        signInSubmitBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        connectBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        submitExBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
     
     private void setDefaultPassword(javax.swing.JPasswordField passwordFiled, javax.swing.JPasswordField confirmPasswordFiled) {
@@ -1575,17 +1909,20 @@ public class Mavenproject1 extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backToLog;
     private javax.swing.JPasswordField confirmPasswordSignup;
     private com.k33ptoo.components.KButton connectBtn;
     private com.k33ptoo.components.KGradientPanel connectForm;
+    private javax.swing.JLabel countDownDisplay;
     private com.k33ptoo.components.KGradientPanel excerciseField;
     private javax.swing.JTextField fullname;
     private javax.swing.JTextField hostNameInput;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1598,33 +1935,38 @@ public class Mavenproject1 extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private com.k33ptoo.components.KButton kButton1;
+    private com.k33ptoo.components.KButton kButton3;
+    private com.k33ptoo.components.KButton kButton4;
     private com.k33ptoo.components.KButton kButton5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel10;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel11;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel12;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
     private com.k33ptoo.components.KGradientPanel kGradientPanel5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel6;
-    private com.k33ptoo.components.KGradientPanel kGradientPanel7;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel8;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel9;
     private javax.swing.JLayeredPane layerForms;
     private com.k33ptoo.components.KGradientPanel loginForm;
     private com.k33ptoo.components.KGradientPanel mainLayout;
     private com.k33ptoo.components.KGradientPanel mainLayoutHeader;
     private javax.swing.JTextField phoneNumber;
+    private javax.swing.JTextField phoneNumber1;
     private javax.swing.JTextField portInput;
+    private javax.swing.ButtonGroup resultGroup;
+    private com.k33ptoo.components.KGradientPanel resultSelectField;
     private javax.swing.JScrollPane scrollPaneField;
     private com.k33ptoo.components.KButton signBtn;
     private com.k33ptoo.components.KButton signInSubmitBtn;
     private com.k33ptoo.components.KButton signupBtn;
     private com.k33ptoo.components.KGradientPanel signupForm;
     private javax.swing.JTextField studentID;
-    private com.k33ptoo.components.KButton submitAnswers;
+    private com.k33ptoo.components.KButton submitExBtn;
     private com.k33ptoo.components.KGradientPanel userInfo;
     private javax.swing.JTextField userNameInput;
     private javax.swing.JTextField userNameSignUp;
